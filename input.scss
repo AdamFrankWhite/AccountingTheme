@@ -28,12 +28,28 @@ a {
         font-size: 0.9em;
     }
 }
+
+.sticky {
+    position: fixed;
+    height: auto;
+    animation: fadeIn 0.75s forwards;
+    width: 100%;
+    background: white;
+    font-size: 0.95em;
+    // border-bottom: 1px solid black;
+    z-index: 1000;
+}
+.thin {
+    margin: 0 0 0 1em !important;
+}
 // Nav
 .contact-bar {
     width: 100%;
     padding: 0.15em 0;
     background: navy;
     display: flex;
+    top: -2em;
+    z-index: 1000;
     justify-content: space-around;
     @media (min-width: 700px) {
         justify-content: flex-end;
@@ -164,6 +180,7 @@ nav {
     display: flex;
     align-items: center;
     margin: 1em;
+
     img {
         @media (max-width: 699px) {
             height: 50px;

@@ -24,7 +24,7 @@
                 <a href="#">upgrade your browser</a> to improve your experience.
             </p>
         <![endif]-->
-        <header>
+        <header id="contactBar">
             <div class="contact-bar">
                 <ul>
                     <li class="contact-bar__item">
@@ -412,6 +412,26 @@
             function closeNav() {
                 document.getElementById("mySidenav").style.width = "0";
             }
+            //Sticky contact
+            function stickyContactBar() {
+                const scrollY = -document.body.getBoundingClientRect().top;
+                console.log(scrollY);
+                if (scrollY > 150) {
+                    document
+                        .getElementById("contactBar")
+                        .classList.add("sticky");
+                    document
+                        .getElementsByClassName("logo-cont")[0]
+                        .classList.add("thin");
+                } else {
+                    document
+                        .getElementById("contactBar")
+                        .classList.remove("sticky");
+                    document
+                        .getElementsByClassName("logo-cont")[0]
+                        .classList.remove("thin");
+                }
+            }
             // Scroll fade in
             const services = document.getElementsByClassName(
                 "services-cont"
@@ -429,8 +449,10 @@
                 "why-us-cont__content"
             )[0];
             const whyUsScrollTop = whyUsContent.getBoundingClientRect().top;
+
+            //Listen to scroll
             window.onscroll = function () {
-                console.log(servicesHeading);
+                stickyContactBar();
                 if (document.documentElement.scrollTop + 200 > servicesY) {
                     services.classList.add("fadeIn");
                     servicesRule.classList.add("fadeIn");
