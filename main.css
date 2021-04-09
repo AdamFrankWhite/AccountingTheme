@@ -322,7 +322,7 @@ nav ul.nav-menu li a {
   color: white;
 }
 .welcome .welcome-cont {
-  width: 85%;
+  width: 90%;
   margin: auto;
   display: flex;
 }
@@ -359,9 +359,14 @@ nav ul.nav-menu li a {
   }
 }
 .welcome .welcome-cont .welcome-cont__content p {
-  width: 85%;
-  margin: auto;
+  width: 90%;
+  margin: 0.5em auto;
   text-align: justify;
+}
+@media (max-width: 699px) {
+  .welcome .welcome-cont .welcome-cont__content p {
+    font-size: 1.25em;
+  }
 }
 .welcome hr {
   width: 3em;
@@ -389,7 +394,7 @@ nav ul.nav-menu li a {
 }
 @media (max-width: 699px) {
   .services h2 {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
 }
 .services hr {
@@ -408,6 +413,11 @@ nav ul.nav-menu li a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+@media (max-width: 699px) {
+  .services .services-cont {
+    font-size: 1.25em;
+  }
 }
 @media (min-width: 700px) {
   .services .services-cont {
@@ -508,7 +518,7 @@ nav ul.nav-menu li a {
 }
 @media (max-width: 699px) {
   .why-us .why-us-cont {
-    font-size: 1.1em;
+    font-size: 1.5em;
   }
 }
 .why-us .why-us-cont .why-us-cont__content {
@@ -555,7 +565,7 @@ nav ul.nav-menu li a {
 @media (max-width: 699px) {
   .why-us .why-us-cont .why-us-cont__content .why-us-content__card-cont .card-cont__card p {
     margin: auto;
-    width: 75%;
+    width: 85%;
     padding-left: 1em;
   }
 }
@@ -579,6 +589,11 @@ nav ul.nav-menu li a {
 .testimonials__cont {
   width: 90%;
   margin: 2em auto;
+}
+@media (max-width: 699px) {
+  .testimonials__cont {
+    font-size: 1.5em;
+  }
 }
 .testimonials__cont h2 {
   text-align: center;
@@ -613,6 +628,12 @@ nav ul.nav-menu li a {
   margin: auto;
   text-align: justify;
 }
+@media (max-width: 699px) {
+  .mySlides p {
+    width: 100%;
+    padding: 1em;
+  }
+}
 
 /* Next & previous buttons */
 .prev,
@@ -629,6 +650,12 @@ nav ul.nav-menu li a {
   border-radius: 5px;
   user-select: none;
 }
+@media (max-width: 699px) {
+  .prev,
+.next {
+    top: 110%;
+  }
+}
 
 /* Position the "next button" to the right */
 .next {
@@ -644,12 +671,11 @@ nav ul.nav-menu li a {
 
 /* Caption */
 .caption {
+  display: block;
   color: #f2f2f2;
   font-size: 1.1em;
   font-weight: bold;
-  position: absolute;
-  bottom: 12px;
-  right: 20%;
+  text-align: right;
 }
 
 /* The dots/bullets/indicators */
@@ -698,6 +724,11 @@ footer {
   background: #252525;
   color: white;
 }
+@media (max-width: 699px) {
+  footer {
+    font-size: 1.15em;
+  }
+}
 footer i {
   margin-right: 0.5em;
   margin-bottom: 0.5em;
@@ -716,13 +747,25 @@ footer .footer__cont {
 @media (max-width: 699px) {
   footer .footer__cont {
     flex-direction: column;
+    padding: 2em 1em;
   }
 }
 footer .footer__about {
   width: 40%;
 }
+@media (max-width: 699px) {
+  footer .footer__about {
+    width: 100%;
+  }
+}
 footer .footer__contact {
   width: 25%;
+}
+@media (max-width: 699px) {
+  footer .footer__contact {
+    width: 100%;
+    margin-top: 2em;
+  }
 }
 footer .footer__contact hr {
   width: 3em;
@@ -734,6 +777,12 @@ footer .footer__contact hr {
 footer .footer__contact ul {
   list-style: none;
 }
+@media (max-width: 699px) {
+  footer .footer__contact ul {
+    font-size: 1.15em;
+  }
+}
+
 .fadeIn {
   animation: fadeIn 0.9s forwards;
   animation-timing-function: cubic-bezier(0.58, 0, 0.42, 1);
