@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    background: rgb(173, 173, 173);
+}
 html,
 body {
     width: 100%;
@@ -10,6 +13,10 @@ body {
 body {
     font-size: 16px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    @media (min-width: 1200px) {
+        max-width: 1600px;
+        margin: auto;
+    }
 }
 a {
     text-decoration: none;
@@ -41,6 +48,14 @@ a {
 }
 .thin {
     margin: 0 0 0 1em !important;
+}
+
+header {
+    @media (min-width: 800px) and (max-width: 1200px) {
+        font-size: 0.8em;
+    }
+    background: white;
+    max-width: 1600px;
 }
 // Nav
 .contact-bar {
@@ -89,6 +104,14 @@ nav {
     @media (min-width: 700px) {
         justify-content: space-between;
     }
+    @media (min-width: 800px) and (max-width: 1120px) {
+        flex-direction: column;
+    }
+    @media (min-width: 700px) and (max-width: 1012px) {
+        width: 95%;
+        margin: auto;
+    }
+
     .fa-bars {
         font-size: 1.75em;
         user-select: none; /* standard syntax */
@@ -96,7 +119,7 @@ nav {
         -moz-user-select: none; /* mozilla browsers */
         -khtml-user-select: none; /* webkit (konqueror) browsers */
         -ms-user-select: none; /* IE10+ */
-        @media (min-width: 700px) {
+        @media (min-width: 800px) {
             display: none;
         }
     }
@@ -104,12 +127,15 @@ nav {
         display: none;
         flex-direction: column;
 
-        @media (min-width: 700px) {
+        @media (min-width: 800px) {
             flex-direction: row;
             display: flex;
         }
         list-style: none;
         margin: 0 20px;
+        @media (max-width: 699px) {
+            margin: 0 10px;
+        }
         li {
             padding: 20px;
             font-size: 1.1em;
@@ -127,7 +153,7 @@ nav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    z-index: 1000; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #111; /* Black*/
@@ -243,11 +269,14 @@ nav {
         }
     }
     hr {
-        margin: auto;
+        @media (max-width: 699px) {
+            margin: auto;
+        }
         width: 5em;
         border: none;
         @media (min-width: 700px) {
             margin-left: auto;
+            margin-top: 1em;
         }
 
         padding-top: 0.25em;
@@ -273,22 +302,23 @@ nav {
             flex-direction: column;
         }
         margin-left: auto;
-
+        font-family: "Segoe UI";
         padding: 0 40px;
-        width: 30%;
+        width: 100%;
         display: flex;
         justify-content: flex-end;
         a {
             @media (max-width: 699px) {
                 width: 100%;
                 text-align: center;
-                font-weight: 400;
+
+                margin: 0.25em auto;
             }
             padding: 0.75em 1em;
-            font-size: 1.25em;
+            font-size: 1.1em;
+            // font-weight: bold;
             border-radius: 5px;
-            // margin-left: 0.75em;
-            margin: 0.25em auto;
+            margin-left: 1.5em;
             text-transform: uppercase;
         }
         a:nth-of-type(1) {
@@ -310,6 +340,7 @@ nav {
         width: 90%;
         margin: auto;
         display: flex;
+        align-items: center;
         @media (max-width: 699px) {
             flex-direction: column;
         }
@@ -328,17 +359,19 @@ nav {
             width: 45%;
             margin: 2.5%;
             h2 {
-                font-size: 1.75em;
+                font-size: calc(1em + 0.5vw);
                 @media (max-width: 699px) {
                     text-align: center;
                 }
             }
             p {
+                font-size: calc(0.75em + 0.15vw);
                 width: 90%;
-                margin: 0.5em auto;
+                margin-top: 1em;
                 text-align: justify;
                 @media (max-width: 699px) {
-                    font-size: 1.25em;
+                    font-size: 1.2em;
+                    margin: 0.5em auto;
                 }
             }
         }
@@ -401,8 +434,8 @@ nav {
             flex-basis: 100%;
             margin: 1.5em;
             p {
-                font-size: 0.95em;
-                text-align: justify;
+                font-size: 0.9em;
+                // text-align: justify;
                 color: rgb(79, 79, 79);
             }
             i,
@@ -473,7 +506,7 @@ nav {
         }
     }
     .why-us-cont {
-        width: 95%;
+        // width: 95%;
         margin: auto;
         display: grid;
         grid-template-columns: 1fr;
@@ -504,7 +537,7 @@ nav {
                         align-items: center;
                         @media (max-width: 699px) {
                             justify-content: center;
-                            font-size: 1.25em;
+                            font-size: 0.9em;
                         }
                     }
                     @media (min-width: 800px) {
@@ -516,10 +549,11 @@ nav {
                     }
                     p {
                         color: #cefffd;
-                        font-size: 0.95em;
+                        font-size: 0.9em;
                         width: 90%;
                         @media (max-width: 699px) {
                             margin: auto;
+                            font-size: 0.75em;
                             width: 85%;
                             padding-left: 1em;
                             // text-align: justify;
@@ -529,8 +563,9 @@ nav {
             }
         }
         img {
-            width: 95%;
+            width: 90%;
             height: auto;
+            margin: auto;
             @media (max-width: 699px) {
                 grid-row: 1;
                 margin: auto;
@@ -539,16 +574,19 @@ nav {
                 margin-left: auto;
             }
 
-            transform: translateY(-3em);
+            // transform: translateY(-3em);
         }
     }
 }
 
 // Testimonials
-
+.testimonials {
+    background: white;
+}
 .testimonials__cont {
     width: 90%;
-    margin: 2em auto;
+    margin: auto;
+    padding: 2em 0;
     @media (max-width: 699px) {
         font-size: 1.5em;
     }
@@ -715,9 +753,13 @@ footer {
         }
     }
     .footer__contact {
-        width: 25%;
+        width: 30%;
         @media (max-width: 699px) {
             width: 100%;
+            margin-top: 2em;
+        }
+        @media (min-width: 700px) and (max-width: 1000px) {
+            width: 40%;
             margin-top: 2em;
         }
         hr {

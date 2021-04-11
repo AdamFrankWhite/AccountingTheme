@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background: #adadad;
+}
+
 html,
 body {
   width: 100%;
@@ -12,6 +16,12 @@ body {
 body {
   font-size: 16px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+@media (min-width: 1200px) {
+  body {
+    max-width: 1600px;
+    margin: auto;
+  }
 }
 
 a {
@@ -43,6 +53,16 @@ a:hover {
 
 .thin {
   margin: 0 0 0 1em !important;
+}
+
+header {
+  background: white;
+  max-width: 1600px;
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+  header {
+    font-size: 0.8em;
+  }
 }
 
 .contact-bar {
@@ -98,6 +118,17 @@ nav {
     justify-content: space-between;
   }
 }
+@media (min-width: 800px) and (max-width: 1120px) {
+  nav {
+    flex-direction: column;
+  }
+}
+@media (min-width: 700px) and (max-width: 1012px) {
+  nav {
+    width: 95%;
+    margin: auto;
+  }
+}
 nav .fa-bars {
   font-size: 1.75em;
   user-select: none;
@@ -111,7 +142,7 @@ nav .fa-bars {
   -ms-user-select: none;
   /* IE10+ */
 }
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   nav .fa-bars {
     display: none;
   }
@@ -122,10 +153,15 @@ nav ul.nav-menu {
   list-style: none;
   margin: 0 20px;
 }
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   nav ul.nav-menu {
     flex-direction: row;
     display: flex;
+  }
+}
+@media (max-width: 699px) {
+  nav ul.nav-menu {
+    margin: 0 10px;
   }
 }
 nav ul.nav-menu li {
@@ -144,7 +180,7 @@ nav ul.nav-menu li a {
   /* 0 width - change this with JavaScript */
   position: fixed;
   /* Stay in place */
-  z-index: 1;
+  z-index: 1000;
   /* Stay on top */
   top: 0;
   /* Stay at the top */
@@ -272,15 +308,20 @@ nav ul.nav-menu li a {
   }
 }
 .hero hr {
-  margin: auto;
   width: 5em;
   border: none;
   padding-top: 0.25em;
   background-color: white;
 }
+@media (max-width: 699px) {
+  .hero hr {
+    margin: auto;
+  }
+}
 @media (min-width: 700px) {
   .hero hr {
     margin-left: auto;
+    margin-top: 1em;
   }
 }
 .hero h2 {
@@ -297,8 +338,9 @@ nav ul.nav-menu li a {
 }
 .hero .cta {
   margin-left: auto;
+  font-family: "Segoe UI";
   padding: 0 40px;
-  width: 30%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -312,16 +354,16 @@ nav ul.nav-menu li a {
 }
 .hero .cta a {
   padding: 0.75em 1em;
-  font-size: 1.25em;
+  font-size: 1.1em;
   border-radius: 5px;
-  margin: 0.25em auto;
+  margin-left: 1.5em;
   text-transform: uppercase;
 }
 @media (max-width: 699px) {
   .hero .cta a {
     width: 100%;
     text-align: center;
-    font-weight: 400;
+    margin: 0.25em auto;
   }
 }
 .hero .cta a:nth-of-type(1) {
@@ -341,6 +383,7 @@ nav ul.nav-menu li a {
   width: 90%;
   margin: auto;
   display: flex;
+  align-items: center;
 }
 @media (max-width: 699px) {
   .welcome .welcome-cont {
@@ -367,7 +410,7 @@ nav ul.nav-menu li a {
   }
 }
 .welcome .welcome-cont .welcome-cont__content h2 {
-  font-size: 1.75em;
+  font-size: calc(1em + 0.5vw);
 }
 @media (max-width: 699px) {
   .welcome .welcome-cont .welcome-cont__content h2 {
@@ -375,13 +418,15 @@ nav ul.nav-menu li a {
   }
 }
 .welcome .welcome-cont .welcome-cont__content p {
+  font-size: calc(0.75em + 0.15vw);
   width: 90%;
-  margin: 0.5em auto;
+  margin-top: 1em;
   text-align: justify;
 }
 @media (max-width: 699px) {
   .welcome .welcome-cont .welcome-cont__content p {
-    font-size: 1.25em;
+    font-size: 1.2em;
+    margin: 0.5em auto;
   }
 }
 .welcome hr {
@@ -452,8 +497,7 @@ nav ul.nav-menu li a {
   margin: 1.5em;
 }
 .services .services-cont .services-cont__card p {
-  font-size: 0.95em;
-  text-align: justify;
+  font-size: 0.9em;
   color: #4f4f4f;
 }
 .services .services-cont .services-cont__card i,
@@ -522,7 +566,6 @@ nav ul.nav-menu li a {
   }
 }
 .why-us .why-us-cont {
-  width: 95%;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -561,7 +604,7 @@ nav ul.nav-menu li a {
 @media (max-width: 699px) {
   .why-us .why-us-cont .why-us-cont__content .why-us-content__card-cont .card-cont__card .card__title {
     justify-content: center;
-    font-size: 1.25em;
+    font-size: 0.9em;
   }
 }
 @media (min-width: 800px) {
@@ -575,20 +618,21 @@ nav ul.nav-menu li a {
 }
 .why-us .why-us-cont .why-us-cont__content .why-us-content__card-cont .card-cont__card p {
   color: #cefffd;
-  font-size: 0.95em;
+  font-size: 0.9em;
   width: 90%;
 }
 @media (max-width: 699px) {
   .why-us .why-us-cont .why-us-cont__content .why-us-content__card-cont .card-cont__card p {
     margin: auto;
+    font-size: 0.75em;
     width: 85%;
     padding-left: 1em;
   }
 }
 .why-us .why-us-cont img {
-  width: 95%;
+  width: 90%;
   height: auto;
-  transform: translateY(-3em);
+  margin: auto;
 }
 @media (max-width: 699px) {
   .why-us .why-us-cont img {
@@ -602,9 +646,14 @@ nav ul.nav-menu li a {
   }
 }
 
+.testimonials {
+  background: white;
+}
+
 .testimonials__cont {
   width: 90%;
-  margin: 2em auto;
+  margin: auto;
+  padding: 2em 0;
 }
 @media (max-width: 699px) {
   .testimonials__cont {
@@ -775,11 +824,17 @@ footer .footer__about {
   }
 }
 footer .footer__contact {
-  width: 25%;
+  width: 30%;
 }
 @media (max-width: 699px) {
   footer .footer__contact {
     width: 100%;
+    margin-top: 2em;
+  }
+}
+@media (min-width: 700px) and (max-width: 1000px) {
+  footer .footer__contact {
+    width: 40%;
     margin-top: 2em;
   }
 }
